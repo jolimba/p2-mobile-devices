@@ -5,7 +5,6 @@ import RecordItem from '../components/RecordItem'
 
 const RecordListScreen = (props) => {
     const records = useSelector(stateInit => stateInit.records.records)
-    console.log(records)
     return (
         <FlatList 
             data={records}

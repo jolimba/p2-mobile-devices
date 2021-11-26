@@ -3,15 +3,15 @@ import { FlatList, StyleSheet, Text, View } from 'react-native'
 import { useSelector } from 'react-redux'
 import Colors from '../constants/Colors'
 
-const DetailRecordScreen = (props) => {
-    const records = useSelector(stateInit => stateInit.records.records)
+const DetailRecordScreen = ({route}) => {
+    const {nameRecord, phoneRecord, descriptionRecord} = route.params
+    console.log(route)
     return (
         <View style={styles.form}>
             <Text style={styles.title}>Records: </Text>
             <View style={styles.container}>
-                <Text style={styles.text}>Nome: {JSON.stringify(records)}</Text>
-                {/* <Text style={styles.text}>Name: {records[0].nameRecord}</Text>
-                <Text style={styles.text}>Phone: {records[0].phoneRecord}</Text>
+                <Text style={styles.text}>Name: {nameRecord}</Text>
+                {/* <Text style={styles.text}>Phone: {records[0].phoneRecord}</Text>
                 <Text style={styles.text}>Description: {records[0].descriptionRecord}</Text> */}
                 {/* <Text style={styles.text}>xxxx:{records[Record.nameRecord]}</Text> */}
             </View>
