@@ -5,26 +5,32 @@ import Colors from '../constants/Colors'
 import * as recordsActions from '../store/record-actions'
 
 const NewRecordScreen = (props) => {
-    const [newRecord, setNewRecord] = useState('')
+    const [newRecordName, setNewRecordName] = useState('')
+    const [newRecordPhone, setNewRecordPhone] = useState('')
+    const [newRecordDescription, setNewRecordDescription] = useState('')
 
     const dispatch = useDispatch()
-
-    const newRecordChanged = (text) => {
-        setNewRecord(text)
-    }
 
     const addRecord = () => {
         const acao = recordsActions.addRecord(newRecord)
         dispatch(acao)
-        setNewRecord('')
+        cleanState()
         props.navigation.goBack()
+    }
+
+    const cleanState = () => {
+        setNewRecordName('')
+        setNewRecordPhone('')
+        setNewRecordDescription('')
     }
 
     return (
         <ScrollView>
             <View style={styles.form}>
                 <Text style={styles.title}>Novo registro</Text>
-                <TextInput style={styles.input} onChangeText={newRecordChanged} value={newRecord}/>
+                <TextInput style={styles.input} onChangeText={setNewRecordName} value={newRecordName} placeholder="Name"/>
+                <TextInput style={styles.input} onChangeText={setNewRecordPhone} value={newRecordPhone} placeholder="Phone Number"/>
+                <TextInput style={styles.input} onChangeText={setNewRecordDescription} value={newRecordDescription} placeholder="Description"/>
                 <Button 
                     title="Save"
                     color={Colors.primary}
