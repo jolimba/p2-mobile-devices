@@ -1,6 +1,5 @@
 import React from 'react'
-import { FlatList, StyleSheet, Text, View } from 'react-native'
-import { useSelector } from 'react-redux'
+import { StyleSheet, Text, View } from 'react-native'
 import Colors from '../constants/Colors'
 
 const DetailRecordScreen = ({route}) => {
@@ -27,7 +26,7 @@ const styles = StyleSheet.create({
         height: 120,
         margin: 10,
         justifyContent: 'center',
-        alignItems: 'center',
+        elevation: 10,
         borderRadius: 5
     },
     form: {
@@ -39,8 +38,9 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     text: {
-        color: 'black',
+        color: 'white',
         fontSize: 18,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        marginLeft: 10
     }
 })
