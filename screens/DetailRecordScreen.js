@@ -8,12 +8,11 @@ const DetailRecordScreen = ({route}) => {
     console.log(route)
     return (
         <View style={styles.form}>
-            <Text style={styles.title}>Records: </Text>
+            <Text style={styles.title}>Details: </Text>
             <View style={styles.container}>
                 <Text style={styles.text}>Name: {nameRecord}</Text>
-                {/* <Text style={styles.text}>Phone: {records[0].phoneRecord}</Text>
-                <Text style={styles.text}>Description: {records[0].descriptionRecord}</Text> */}
-                {/* <Text style={styles.text}>xxxx:{records[Record.nameRecord]}</Text> */}
+                <Text style={styles.text}>Phone: {phoneRecord}</Text>
+                <Text style={styles.text}>Description: {descriptionRecord}</Text>
             </View>
         </View>
 
@@ -25,7 +24,7 @@ export default DetailRecordScreen
 const styles = StyleSheet.create({
     container: {
         backgroundColor: Colors.primary,
-        height: 500,
+        height: 120,
         margin: 10,
         justifyContent: 'center',
         alignItems: 'center',
