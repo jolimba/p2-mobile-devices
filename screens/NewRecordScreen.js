@@ -12,7 +12,7 @@ const NewRecordScreen = (props) => {
     const dispatch = useDispatch()
 
     const addRecord = () => {
-        const acao = recordsActions.addRecord(newRecord)
+        const acao = recordsActions.addRecord(newRecordName, newRecordPhone, newRecordDescription)
         dispatch(acao)
         cleanState()
         props.navigation.goBack()

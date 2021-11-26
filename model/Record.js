@@ -1,8 +1,9 @@
 class Record {
-    constructor (id, nameRecord) {
+    constructor (id, nameRecord, phoneRecord, descriptionRecord) {
         this.id = id
         this.nameRecord = nameRecord
-        this.description = description;
+        this.phoneRecord = phoneRecord
+        this.descriptionRecord = descriptionRecord;
     }
 }
 

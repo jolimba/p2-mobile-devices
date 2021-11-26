@@ -6,11 +6,9 @@ const initialState = {
 }
 
 export default (stateInit = initialState, action) => {
-    console.log(stateInit)
-    console.log(action)
     switch(action.type) {
         case ADD_RECORD:
-            const record = new Record(new Date().toString(), action.dataRecord.nameRecord)
+            const record = new Record(new Date().toString(), action.dataRecord.nameRecord, action.dataRecord.phoneRecord, action.dataRecord.descriptionRecord)
             console.log(record)
             return {
                 records: [record, ...stateInit.records] 
